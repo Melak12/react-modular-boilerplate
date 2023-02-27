@@ -19,8 +19,11 @@ axiosClient.defaults.timeout = 7000;
 axiosClient.defaults.withCredentials = true;
 
 
-export const get = async (URL: string) => {
-    return await axiosClient.get(`${URL}`).then((response) => response);
+export const get = async (URL: string, params = {}) => {
+    const queryString = Object.entries(params).map(param => {
+        return `${param[0]}=${param[1]}`
+    }).join('&')
+    return await axiosClient.get(`${URL}?${queryString}`).then((response) => response);
 };
 
 export const post = async (URL: string, payload?: unknown) => {
