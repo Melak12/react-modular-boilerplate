@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "description": "The well structured with modular (feature based) oriented architecture template (starter kit) for building medium to enterprise react web app.",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
