@@ -1,7 +1,11 @@
 {
-  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
-    // "baseUrl": "./src/",
+    "baseUrl": ".",
+    "paths": {
+      "@app/*" : ["src/*"],
+      "@modules/*" : ["src/modules/*"],
+      "@components/*" : ["src/components/*"],
+    },
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],

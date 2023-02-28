@@ -1,5 +1,4 @@
 import React from "react";
-import { DefaultWrapper } from "./components";
 import { useRoutes } from "react-router-dom";
 import routes from "./routes";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
