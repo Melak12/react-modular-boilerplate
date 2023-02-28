@@ -5,6 +5,10 @@
   "license": "MIT",
   "description": "The well structured with modular (feature based) oriented architecture template (starter kit) for building medium to enterprise react web app.",
   "type": "module",
+  "author": {
+    "name": "Melake Wubshet",
+    "url": "https://github.com/Melak12"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
