@@ -1,19 +1,20 @@
-import { HomePage } from "@app/pages";
-import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { RouteObject } from "react-router-dom";
+import { HomePage } from "../pages";
+import BaseLayout from "../components/layout/BaseLayout";
+
+const routes: RouteObject[] = [
+  {
+    path: '',
+    element: <BaseLayout />,
+    children: [
+      {
+        path: '/',
+        element: <HomePage />
+      },
+    ]
+  }
+]
 
 
-type Props = {}
-
-function RoutesHome({ }: Props) {
-    return (
-        <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
-    
-          <Route path="/home" element={<HomePage />} />
-        </Routes>
-      );
-};
-
-export default RoutesHome
+export default routes;
 
