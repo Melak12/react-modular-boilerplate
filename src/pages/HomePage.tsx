@@ -18,9 +18,9 @@ function HomePage() {
         <title>React Modularized Boilerplate</title>
       </Helmet>
       <Container maxWidth="lg">
-        <Box display="flex" justifyContent="center" py={5} alignItems="center">
+        <Box display="flex" justifyContent="center" py={5} my={10} alignItems="center">
           {/* <Logo /> */}
-          <h3>Logo Here</h3>
+          <h3>Home Content</h3>
         </Box>
         <Card sx={{ p: 10, mb: 10, borderRadius: 12 }}>
           {/* <Hero /> */}

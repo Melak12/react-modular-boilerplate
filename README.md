@@ -4,6 +4,9 @@ The well structured with modular (feature based) oriented architecture template 
 
 🚀 Quickly dive into your product development without worring about the folder structure and configurations.
 
+### Rule of Thumb 
+Don't use or import one module in another module directly. Use global store to manage common states. 
+
 ## Features
 - 100% Typescript
 - Axios Http Client with interceptiors
