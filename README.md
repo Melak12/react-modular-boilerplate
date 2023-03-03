@@ -5,7 +5,8 @@ The well structured with modular (feature based) oriented architecture template 
 🚀 Quickly dive into your product development without worring about the folder structure and configurations.
 
 ### Rule of Thumb 
-Don't use or import one module in another module directly. Use global store to manage common states. 
+- Don't use or import one module in another module directly. Use global store to manage common states. 
+- Only import resources or components from modules coming from their `.index.ts` file only. Unless doing so, you would get ESlint error.  
 
 ## Features
 - 100% Typescript
@@ -16,6 +17,7 @@ Don't use or import one module in another module directly. Use global store to m
 - Unit testing with Jest
 - MUI - Material UI 
 - ESLINT - Configured to get Eslint error when you try to import a component or a class inside a module that doesn't come from index.ts
+- Commonly used utility functions (`/src/utils/`)
 - [MIT](LICENSE) License
 
 ## Tech Stack
@@ -27,13 +29,29 @@ Don't use or import one module in another module directly. Use global store to m
 
 ## Directory Structure
 
-`├──`[`assets`](./assets) — Global static assets such as images, svgs, icons, so on.<br>
-`├──`[`global.d.ts`](./global.d.ts) — Global TypeScript declarations<br>
+`├──`[`assets`](./src/assets/) — Global static assets such as images, svgs, icons, so on.<br>
+`├──`[`components`](./src/components/) — Global shared components<br>
+`├──`[`config`](./src/config/) — Global configurations and constants<br>
+`├──`[`contexts`](./src/contexts/) — Shared React Contexts<br>
+`├──`[`hooks`](./src/contexts/) — Shared custom react hooks <br/>
+`├──`[`models`](./src/models/) — Application wise model classes<br/>
+`├──`[`modules`](./src/modules/) — Modules (features) that are independent each other.<br/>
+&nbsp; &emsp;`├──`[`Auth`](./src/modules/Auth) — module related to Authentication <br/>
+&nbsp; &emsp;`├──`[`Todo`](./src/modules/Todo) — module related to Todo List <br/>
+&nbsp; &emsp;`├──...` <br/>
+`├──`[`pages`](./src/modules/) — Shared pages that are not necessarily be included in modules.<br/>
+`├──`[`routes`](./src/routes/) — Anything related to routing setup.<br/>
+`├──`[`services`](./src/services/) — Contains all external and shared services.<br/>
+`├──`[`tests`](./src/tests/) — Contains tests for shared services, functions and components. <br/>
+&nbsp; &ensp;&nbsp; &emsp;&nbsp;Note: tests for individual modules are included in the module (feature) directory.<br/>
+`├──`[`utils`](./src/utils/) — Global Utility functions <br>
 `├──`[`index.html`](./index.html) — HTML page containing application entry point<br>
-`├──`[`index.tsx`](./index.tsx) — Single-page application (SPA) entry point<br>
+`├──`[`index.tsx`](./src/index.tsx) — Single-page application (SPA) entry point<br>
 `├──`[`package.json`](./package.json) — Workspace settings and NPM dependencies<br>
 `├──`[`tsconfig.ts`](./tsconfig.json) — TypeScript configuration<br>
+`├──`[`tsconfig.aliases.ts`](./tsconfig.aliases.json) — Extended Typescript configuration that contains import aliases. <br>
 `└──`[`vite.config.ts`](./vite.config.ts) — JavaScript bundler configuration ([docs](https://vitejs.dev/config/))<br>
+`├──`[`.eslintrc.json`](./.eslintrc.json) — ESlint configuration and rules<br>
 
 
 ### Installation
@@ -41,6 +59,9 @@ Don't use or import one module in another module directly. Use global store to m
 
 ### Requirements
 - [Node.js](https://nodejs.org/) v18+
+
+### Optional Recommendations
+- [VSCode](https://code.visualstudio.com/): Free code editing IDE
 
 ### Contribution
 Let’s create great products together! We encourage and welcome collaboration and any type of contribution. 👉 Learn the [contributing docs](CONTRIBUTING.md) on how to contribute the right way.
