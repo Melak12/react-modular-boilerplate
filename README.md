@@ -4,14 +4,25 @@
 
 This is well structured template (**starter kit**) with modular (feature-driven) architecture for building medium to enterprise react web app.
 
+As we all know the complexity of the code grows with the time of the app being in development. This particular architecture will be an overkill for a simple 1-3 page app or prototype. But for an app which is expected to grow with a new and new features added to it, this structure provides quite an accessible way to balance the growing complexity.
+
 In his artcle [Screaming Architecture](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html) Bob Martin says: <br/>
 &nbsp; "Your architectures should tell readers about the system, not about the frameworks you used in your system. If you are building a health-care system, then when new programmers look at the source repository, their first impression should be: “Oh, this is a heath-care system”."
-
 
 ### benefits
 - The biggest pro of this structure is the ease of adding/updating code. Since the bulk of the code is broken down into different features (modules) it is easy to add new features or update existing `modules`. This separation also simplifies the codebase since now files can be considered private which helps with understanding the codebase.
 
 - Another benefit is that the code outside the `modules` folder is generally pretty simple to understand since most of the business logic is wrapped up inside the `modules` folder. This again makes understanding and working with the code that much easier.
+
+- Better code discoverability - it's easier to locate things, what is located where.
+
+- Better encapsulation - no need for other modules to know too much about each other or too easily include code from each other, no need for the code which is used only for one feature to pile in the common place;
+
+- Better testability - the more separate the components are, the easier to test them independently from each other.
+
+ - Easier to work for a team - different people can work on different features (`modules`) without interfering much with each other's work.
+
+ - Better reusability, the core can be reused for other apps, also features can be detached more or less freely, considering that the core will stay the same or similar;
 
 
 ### Rule of Thumb 
