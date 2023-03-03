@@ -1,10 +1,29 @@
 import React from 'react'
+import { Todo } from '../types/Todo'
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
+import StarIcon from '@mui/icons-material/Star';
+import { useNavigate } from 'react-router-dom';
+type Props = {
+  todos: Array<Todo>
+}
 
-type Props = {}
-
-function TodoList({}: Props) {
+function TodoList({ todos }: Props) {
+  const navigate = useNavigate();
   return (
-    <div>TodoList</div>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      {
+        todos.map((todo: Todo) => (
+          <ListItem key={todo.id}>
+            <ListItemButton onClick={() => navigate(`single/${todo.id}`)}>
+              <ListItemIcon>
+                {todo.completed && <StarIcon />}
+              </ListItemIcon>
+              <ListItemText>{todo.title}</ListItemText>
+            </ListItemButton>
+          </ListItem>
+        ))
+      }
+    </List>
   )
 }
 

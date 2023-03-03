@@ -1,19 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import TodoList from '../components/TodoList.component'
-import { Box, Card, Container, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Skeleton, Stack, styled } from '@mui/material';
+import { Box, Container, Skeleton, Stack, styled } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 import { getTodos } from '../services/todo.service';
 import { Todo } from '../types/Todo';
-import StarIcon from '@mui/icons-material/Star';
+import OverviewWrapper from '@app/components/common/OverviewWrapper';
 
-const OverviewWrapper = styled(Box)(
-    () => `
-      overflow: auto;
-      flex: 1;
-      overflow-x: hidden;
-      align-items: center;
-  `
-);
+
+
 function TodoListPage() {
 
     const [todos, setTodos] = useState<Array<Todo>>([]);
@@ -50,21 +44,7 @@ function TodoListPage() {
                         </Box>}
                     </Stack>
 
-                    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-                        {
-                            todos.map((todo: Todo) => (
-                                <ListItem key={todo.id}>
-
-                                    <ListItemButton>
-                                        <ListItemIcon>
-                                            {todo.completed && <StarIcon />}
-                                        </ListItemIcon>
-                                        <ListItemText>{todo.title}</ListItemText>
-                                    </ListItemButton>
-                                </ListItem>
-                            ))
-                        }
-                    </List>
+                    <TodoList todos={todos} />
 
                 </Box>
             </Container>

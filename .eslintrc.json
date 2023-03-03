@@ -16,7 +16,8 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "react-hooks"
     ],
     "rules": {
         "no-restricted-imports": "off",
@@ -34,7 +35,8 @@
             }
         ],
         "react/no-unescaped-entities": "off",
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/rules-of-hooks": "error"
     },
     "settings": {
         "react": {

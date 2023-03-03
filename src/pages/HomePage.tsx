@@ -1,16 +1,8 @@
 
 import { Box, Container, Card } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
-import { styled } from '@mui/material/styles';
 import ToggleButton from '@app/components/buttons/ToggleButton';
-const OverviewWrapper = styled(Box)(
-  () => `
-    overflow: auto;
-    flex: 1;
-    overflow-x: hidden;
-    align-items: center;
-`
-);
+import OverviewWrapper from '@app/components/common/OverviewWrapper';
 
 function HomePage() {
   return (
