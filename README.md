@@ -10,8 +10,11 @@ Don't use or import one module in another module directly. Use global store to m
 ## Features
 - 100% Typescript
 - Axios Http Client with interceptiors
-- Sample Test Examples
+- Sample Todo Examples
 - Modular architecture: in compliance with the  best architectural practices
+- Import alias 
+- Unit testing with Jest
+- MUI - Material UI 
 - [MIT](LICENSE) License
 
 ## Tech Stack

@@ -1,6 +1,7 @@
 import { RouteObject } from "react-router-dom";
 import { HomePage } from "../pages";
 import { BaseLayout, RootError } from "../components";
+import { TodoListPage, TodoDetailPage } from "@app/modules/Todo";
 import AppLayout from "@app/components/layout/AppLayout";
 
 const routes: RouteObject[] = [
@@ -12,6 +13,10 @@ const routes: RouteObject[] = [
       {
         path: '/',
         element: <HomePage />
+      },
+      {
+        path: '/todo',
+        element: <TodoListPage />
       },
     ]
   }
