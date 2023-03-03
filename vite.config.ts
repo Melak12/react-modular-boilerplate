@@ -1,3 +1,6 @@
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
@@ -9,7 +12,7 @@ export default defineConfig({
       { find: '@app', replacement: '/src' },
       { find: '@modules', replacement: '/src/modules' },
       { find: '@components', replacement: '/src/components' }
-  
+
     ],
   },
 })

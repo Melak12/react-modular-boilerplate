@@ -19,7 +19,7 @@ Don't use or import one module in another module directly. Use global store to m
 - [React Router](https://reactrouter.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
-- [Vitest](https://vitejs.dev/),
+- [Jest](https://jestjs.io/),
 
 ## Directory Structure
 

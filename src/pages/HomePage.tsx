@@ -2,6 +2,7 @@
 import { Box, Container, Card } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 import { styled } from '@mui/material/styles';
+import ToggleButton from '@app/components/buttons/ToggleButton';
 const OverviewWrapper = styled(Box)(
   () => `
     overflow: auto;
@@ -21,10 +22,12 @@ function HomePage() {
         <Box display="flex" justifyContent="center" py={5} my={10} alignItems="center">
           {/* <Logo /> */}
           <h3>Home Content</h3>
+     
         </Box>
         <Card sx={{ p: 10, mb: 10, borderRadius: 12 }}>
           {/* <Hero /> */}
         <h3>Hero Content</h3>
+        <ToggleButton />
         </Card>
       </Container>
     </OverviewWrapper>
