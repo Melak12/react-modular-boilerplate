@@ -10,9 +10,9 @@ Before submitting your contribution though, please make sure to take a moment an
 
 * The `main` branch is just a snapshot of the latest stable release. **Do not submit PRs against the `main` branch.**
 * Atomic code contribution looks something like this:
-    * Checkout from upstream `develop`.
+    * Checkout from upstream `dev`.
     * Work on your fork in dedicated branch.
-    * When you're ready to show results - create PR against upstream `develop` and add a developer for review. You can ping said developer to speed things up ;).
+    * When you're ready to show results - create PR against upstream `dev` and add a developer for review. You can ping said developer to speed things up ;).
 * It's OK to have multiple small commits as you work on the PR - we will let GitHub automatically squash it before merging.
 
 * Good stuff to add in your pull request:
