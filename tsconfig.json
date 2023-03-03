@@ -1,11 +1,6 @@
 {
+  "extends": "./tsconfig.aliases.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@app/*" : ["src/*"],
-      "@modules/*" : ["src/modules/*"],
-      "@components/*" : ["src/components/*"],
-    },
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
