@@ -1,8 +1,18 @@
-# React Modular Boilerplate
-
-The well structured with modular (feature based) oriented architecture template (**starter kit**) for building medium to enterprise react web app.
+# React Modular Boilerplate for Enterprise Apps
 
 🚀 Quickly dive into your product development without worring about the folder structure and configurations.
+
+This is well structured template (**starter kit**) with modular (feature-driven) architecture for building medium to enterprise react web app.
+
+In his artcle [Screaming Architecture](https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html) Bob Martin says: <br/>
+&nbsp; "Your architectures should tell readers about the system, not about the frameworks you used in your system. If you are building a health-care system, then when new programmers look at the source repository, their first impression should be: “Oh, this is a heath-care system”."
+
+
+### benefits
+- The biggest pro of this structure is the ease of adding/updating code. Since the bulk of the code is broken down into different features (modules) it is easy to add new features or update existing `modules`. This separation also simplifies the codebase since now files can be considered private which helps with understanding the codebase.
+
+- Another benefit is that the code outside the `modules` folder is generally pretty simple to understand since most of the business logic is wrapped up inside the `modules` folder. This again makes understanding and working with the code that much easier.
+
 
 ### Rule of Thumb 
 - Don't use or import one module in another module directly. Use global store to manage common states. 
@@ -55,7 +65,13 @@ The well structured with modular (feature based) oriented architecture template 
 
 
 ### Installation
+``` bash
+# install dependencies
+npm install
 
+# serve at localhost
+npm run dev
+```
 
 ### Requirements
 - [Node.js](https://nodejs.org/) v18+
