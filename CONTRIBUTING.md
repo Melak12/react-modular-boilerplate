@@ -29,6 +29,12 @@ Before submitting your contribution though, please make sure to take a moment an
 * Local branches
     * For local branches naming stick to [commit message convention](https://www.conventionalcommits.org/en/v1.0.0/). So for feature branch that adds tabs name would be `feat/tabs`.
 
+### ESLint
+* Check any ESLint errors and warnings by running this command:
+`npx eslint src/*`
+
+* Make sure to clear the error and warnings before submitting PR's. 
+
 ### For core contributors
 
 * Keep amount of local branches minimal.

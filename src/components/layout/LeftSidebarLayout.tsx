@@ -1,7 +1,5 @@
-import React, { ReactElement, ReactNode } from 'react'
-import AppHeader from '../common/AppHeader';
-import AppFooter from '../common/AppFooter';
-import { Box, alpha, lighten, useTheme } from '@mui/material';
+import { ReactNode } from 'react'
+import { Box, useTheme } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 
 type Props = {

@@ -15,6 +15,7 @@ Don't use or import one module in another module directly. Use global store to m
 - Import alias 
 - Unit testing with Jest
 - MUI - Material UI 
+- ESLINT - Configured to get Eslint error when you try to import a component or a class inside a module that doesn't come from index.ts
 - [MIT](LICENSE) License
 
 ## Tech Stack

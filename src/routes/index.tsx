@@ -1,7 +1,9 @@
+import React from "react";
 import { RouteObject } from "react-router-dom";
 import { HomePage } from "../pages";
-import { BaseLayout, RootError } from "../components";
+import {RootError } from "../components";
 import { TodoListPage, TodoDetailPage } from "@app/modules/Todo";
+import TodoList from "@app/modules/Todo/components/TodoList.component";
 import AppLayout from "@app/components/layout/AppLayout";
 
 const routes: RouteObject[] = [

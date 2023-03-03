@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { getTodos } from '../services/todo.service';
 import { Todo } from '../types/Todo';
 import StarIcon from '@mui/icons-material/Star';
-type Props = {}
+
 const OverviewWrapper = styled(Box)(
     () => `
       overflow: auto;
@@ -14,7 +14,7 @@ const OverviewWrapper = styled(Box)(
       align-items: center;
   `
 );
-function TodoListPage({ }: Props) {
+function TodoListPage() {
 
     const [todos, setTodos] = useState<Array<Todo>>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
