@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 const arrayToCommaSeparatedText = (array: []) => (array ?
     array
         .map((item) => item)

@@ -10,7 +10,7 @@ import { ArrowDropDown, NotificationsNone } from '@mui/icons-material';
 
 type AppToolbarProps = Omit<AppBarProps, "children">;
 type Props = {
-  props:AppToolbarProps
+  props: AppToolbarProps
 }
 
 function getFirstName(displayName: string): string {
@@ -20,7 +20,8 @@ function getFirstName(displayName: string): string {
 export function AppHeader(props: AppToolbarProps): JSX.Element {
   const { sx, ...other } = props;
   const menuAnchorRef = React.createRef<HTMLButtonElement>();
-  const me = useCurrentUser();
+  // const me = useCurrentUser();
+  const me:any = null;
   return (
     <AppBar
       sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, ...sx }}
@@ -76,8 +77,9 @@ export function AppHeader(props: AppToolbarProps): JSX.Element {
               width: 40,
               height: 40,
             }}
-            children={<NotificationsNone />}
-          />
+          >
+            <NotificationsNone />
+          </IconButton>
         )}
         {me && (
           <IconButton
@@ -91,8 +93,9 @@ export function AppHeader(props: AppToolbarProps): JSX.Element {
               width: 40,
               height: 40,
             }}
-            children={<ArrowDropDown />}
-          />
+          >
+            <ArrowDropDown />
+          </IconButton>
         )}
         {me === null && (
           <Button
@@ -100,17 +103,9 @@ export function AppHeader(props: AppToolbarProps): JSX.Element {
             variant="text"
             href="/login"
             color="inherit"
-            children="Log in"
-          />
-        )}
-        {me === null && (
-          <Button
-            component={NavLink}
-            variant="outlined"
-            href="/signup"
-            color="inherit"
-            children="Create an account"
-          />
+          >
+            Log in
+            </Button>
         )}
       </Toolbar>
 

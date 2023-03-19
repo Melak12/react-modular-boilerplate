@@ -7,7 +7,7 @@ import SidebarProvider from './contexts/SidebarContext';
 import { HelmetProvider } from 'react-helmet-async';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <HelmetProvider>
       <SidebarProvider>
         <BrowserRouter>
@@ -15,5 +15,5 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         </BrowserRouter>
       </SidebarProvider>
     </HelmetProvider>
-  </React.StrictMode>,
+  // </React.StrictMode>
 )
