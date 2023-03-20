@@ -1,14 +1,22 @@
-// todo: import all shared components
+// Components
 import React from "react";
-import { useCurrentUser } from "./auth";
 import useAuthState from "./hooks/useAuthState";
 import useLogout from "./hooks/useLogout";
+
+// Types
+import { UserAccount } from "./auth.types";
+
+// Pages
 const LoginPage = React.lazy(() => import("./pages/LoginPage"));
 
-// todo: export all shared components
+
+
+// Export
 export {
-    useCurrentUser,
     useAuthState,
     useLogout,
     LoginPage
-}
+};
+
+// Export Types
+export type { UserAccount };

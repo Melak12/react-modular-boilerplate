@@ -6,6 +6,7 @@ export const mapUserAccount = (user:User|null):UserAccount|null => {
     return {
         id: user.uid,
         name: user.displayName,
-        email: user.email
+        email: user.email,
+        isAnonymous: false
     }
 };

@@ -1,12 +1,12 @@
 
 
 
-import { useCurrentUser } from '@app/modules/Auth';
 import { AppBar, AppBarProps, Avatar, Button, Chip, IconButton, Link, Toolbar } from '@mui/material';
 import React from 'react';
 import { Logo } from './Logo';
 import { Link as NavLink } from './Link';
 import { ArrowDropDown, NotificationsNone } from '@mui/icons-material';
+import { UserAccount, useAuthState } from '@app/modules/Auth';
 
 type AppToolbarProps = Omit<AppBarProps, "children">;
 type Props = {
@@ -20,8 +20,7 @@ function getFirstName(displayName: string): string {
 export function AppHeader(props: AppToolbarProps): JSX.Element {
   const { sx, ...other } = props;
   const menuAnchorRef = React.createRef<HTMLButtonElement>();
-  // const me = useCurrentUser();
-  const me:any = null;
+  const [me] = useAuthState();
   return (
     <AppBar
       sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, ...sx }}
@@ -57,12 +56,12 @@ export function AppHeader(props: AppToolbarProps): JSX.Element {
             href="/"
             avatar={
               <Avatar
-                alt={me?.displayName || (me?.isAnonymous ? "Anonymous" : "")}
+                alt={me?.name || (me?.isAnonymous ? "Anonymous" : "")}
                 src={me?.photoURL || undefined}
               />
             }
             label={getFirstName(
-              me?.displayName || (me?.isAnonymous ? "Anonymous" : ""),
+              me?.email || (me?.isAnonymous ? "Anonymous" : ""),
             )}
           />
         )}

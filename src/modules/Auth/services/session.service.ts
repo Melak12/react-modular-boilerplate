@@ -1,8 +1,8 @@
 import { UserAccount } from "../auth.types";
 
 export const setAuthSession = (user: UserAccount, token: string) => {
-    sessionStorage.setItem("APP_USER", JSON.stringify(user));
-    sessionStorage.setItem("APP_TOKEN", token);
+    localStorage.setItem("APP_USER", JSON.stringify(user));
+    localStorage.setItem("APP_TOKEN", token);
 }
 
 export const getUserFromSession = (): UserAccount|null => {

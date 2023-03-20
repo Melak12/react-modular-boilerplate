@@ -6,14 +6,9 @@ import { LoginPage, useAuthState } from "@app/modules/Auth";
 import AppLayout from "@app/components/layout/AppLayout";
 import RootError from "@app/components/common/RootError";
 
-function GuardedRoute({ child }: any, requireAuth=true) {
+function GuardedRoute({ child }: any) {
   const [userAccount] = useAuthState();
-  if(requireAuth) {
-    return userAccount ? child : <Navigate to='/login' replace />
-  }
-
-  return child;
-  
+   return userAccount ? child : <Navigate to='/login' replace />
 }
 
 const routes: RouteObject[] = [
@@ -24,7 +19,7 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/',
-        element: <GuardedRoute requireAuth={true} child={<HomePage/>} />
+        element: <GuardedRoute child={<HomePage/>} />
       },
       {
         path: '/todos',
