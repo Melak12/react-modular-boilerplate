@@ -15,16 +15,29 @@ function TodoListPage() {
 
     useEffect(() => {
         setIsLoading(true);
-        getTodos().then((response) => {
+        let abortController:AbortController|null = new AbortController();
+        getTodos(abortController).then((response) => {
             console.log("Todo List", response);
-            setTodos(response);
-
-        }).catch((err) => {
-            console.log("Error in fetching todo. ", err);
+            if (!abortController?.signal?.aborted) {
+                setTodos(response);
+                abortController = null;
+            }else {
+                console.log(">> Aborted <<<");
+                
+            }
+        }
+        ).catch((err) => {
+            if(abortController?.signal?.aborted) {
+                console.log("Operation is aborated", err);
+            }
+            else {
+                console.log("Error in fetching todo. ", err);
+            }
 
         }).finally(() => {
             setIsLoading(false);
         })
+        return () => abortController?.abort();
     }, [])
 
     return (
@@ -44,9 +57,9 @@ function TodoListPage() {
                         </Box>}
                     </Stack>
 
-                    <TodoList todos={todos} />
 
                 </Box>
+                <TodoList todos={todos} />
             </Container>
         </OverviewWrapper>
     )

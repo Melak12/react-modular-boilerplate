@@ -18,24 +18,23 @@ axiosClient.defaults.timeout = 7000;
 
 axiosClient.defaults.withCredentials = true;
 
-
-export const get = async <T>(URL: string, params = {}) => {
+export const get = async <T>(URL: string, params = {}, controller?:AbortController) => {
     const queryString = Object.entries(params).map(param => {
         return `${param[0]}=${param[1]}`
     }).join('&')
-    return await axiosClient.get<T>(`${URL}?${queryString}`).then((response) => response);
+    return await axiosClient.get<T>(`${URL}?${queryString}`, {signal: controller?.signal}).then((response) => response);
 };
 
-export const post = async <T>(URL: string, payload?: unknown) => {
-    return await axiosClient.post<T>(`${URL}`, payload).then((response) => response);
+export const post = async <T>(URL: string, payload?: unknown,  controller?:AbortController) => {
+    return await axiosClient.post<T>(`${URL}`, payload, {signal: controller?.signal}).then((response) => response);
 };
 
-export const patch = async <T>(URL: string, payload: unknown) => {
-    return await axiosClient.patch<T>(`${URL}`, payload).then((response) => response);
+export const patch = async <T>(URL: string, payload: unknown, controller?:AbortController) => {
+    return await axiosClient.patch<T>(`${URL}`, payload, {signal: controller?.signal}).then((response) => response);
 };
 
-export const _delete = async <T>(URL: string) => {
-    return await axiosClient.delete<T>(`${URL}`).then((response) => response);
+export const _delete = async <T>(URL: string, controller?:AbortController) => {
+    return await axiosClient.delete<T>(`${URL}`, {signal: controller?.signal}).then((response) => response);
 };
 
 // Interceptors
